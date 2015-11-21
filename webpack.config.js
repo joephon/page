@@ -5,6 +5,7 @@ module.exports = {
 		__dirname + '/src/css/default.sass',
     __dirname + '/src/css/app.sass',
     __dirname + '/src/css/home.sass',
+    __dirname + '/src/css/profile.sass',
 	],
 	output: {
 		path: __dirname + '/lib/',
