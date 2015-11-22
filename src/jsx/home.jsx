@@ -4,10 +4,10 @@ import React from 'react';
 
 // define home page text
 const text = [
-	'People come, people go, people never ever need to know. Welcome to my tiny site, it\'s powered by React and NodeJs. looks a kinda weird right? I dont act it as a simple site, it contains every single thought that I feel like to toss. press the right side buttom to know more if interested : )',
+	'People leave, people go, people never ever need to know. Welcome to my tiny site, it\'s powered by React and NodeJs. looks a kinda weird right? I dont act it as a simple site, it contains every single thought that I feel like to toss. press the right side buttom to know more if interested : )',
 	'人来人往，人去楼空；梦来梦去，水过竹笼。荣幸歇脚小站，搭建小站我用了React和NodeJs，颜色偏好灰白。大概看起来有点奇葩，不像个站，但我喜欢，喜欢各种折腾，各种鼓捣，小站虽葩，却承载着我无穷无尽的奇思小想。戳左边按钮切换语言，戳右边按钮了解更多: )',
 	'Well here we are! the above displayed cards are the main navigators which may lead you to any corner of my tiny world! Typecally, something was hidden under the page, I have it buried since the site was bulit. it may not be any secrets but can be some funny things. Want to dig it up? pick up a card and take forward. : )',
-	'有没有搞错哦！',
+	'帅哥，别来无恙！人生苍茫而苦短，码海八嘎(bug)而无岸。有生之年自然得活个通透，帅得洒脱，然而隔墙有耳，此处长话短说。我掐指一算，天狼星闪闪发亮，也许直走左转有姑娘。怎么样？编码需安详，感情待培养，重在酝酿，正如我辈日日夜夜面向对象。其实人生就那样，放屁要响，饭碗得抢，代码够漂亮，想怎样就怎样，但都无须张扬否则然并卵！',
 ]
 
 // define some lets to get element objects
@@ -185,7 +185,7 @@ class Home extends React.Component {
 								<div className='dress0'><span className='glyphicon glyphicon-hand-right'></span></div>
 								<div className='dress1'></div>
 								<div className='dress2'><span className='glyphicon glyphicon-user'></span></div>
-								<div className='dress3'>Joephon, a self-culture programmer. click to get more.</div>
+								<div className='dress3'>Joephon, a dreamwalker programmer. click to know more.</div>
 							</div>
 							<div ref ='article' className='nav animated flipInY'>
 								<div className='dress0'><span className='glyphicon glyphicon-hand-right'></span></div>
@@ -203,7 +203,7 @@ class Home extends React.Component {
 								<div className='dress0'><span className='glyphicon glyphicon-hand-right'></span></div>
 								<div className='dress1'></div>
 								<div className='dress2'><span className='glyphicon glyphicon-fire'></span></div>
-								<div className='dress3'>No pain no gain, no game no boom! go get boom~</div>
+								<div className='dress3'>No pain no gain, no game no bang! go get bang~</div>
 							</div>
 						</div>
 						<div className='col-wrap'>
@@ -263,7 +263,6 @@ class Home extends React.Component {
 							</div>
 						</div>
 						<div ref='panel' className='panel'>
-							<div ref='light' className='light'></div>
 							<div className='global-back'></div>
 							<div className='round-back'></div>
 							<div ref='global' className='global' onMouseOver={this.textLanguage.bind(this)}>
@@ -285,6 +284,7 @@ class Home extends React.Component {
 							<div ref='text' className='text'>
 								{this.state.text}
 							</div>
+							<div ref='light' className='light'></div>
 						</div>
 					</div>
 				</div>
