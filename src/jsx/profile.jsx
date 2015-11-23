@@ -1,6 +1,7 @@
 'use strict'
 
 import React from 'react';
+import Nav from './nav.jsx';
 
 // define section objects
 let section = document.getElementsByClassName('section');
@@ -9,9 +10,16 @@ class Profile extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			info: null,
+			en: true,
+			translate: true,
 			isPicked: false,
 			hover: null,
 			section: null,
+			// main: this.mainText(),
+			hrefAnimation: () => {
+				this.refs.profile.className = 'profile animated bounceOutLeft';
+			},
 		};
 	}
 
@@ -27,20 +35,16 @@ class Profile extends React.Component {
 		for(let i = 0; i < section.length; i ++) {
 			setTimeout(() => {
 				section[i].style.top = '100px';
-				section[i].style.right = window.innerWidth/4 + 'px';
+				section[i].style.right = '50%';
+				window.innerWidth <= 768 + 'px' 
+				? section[i].style.marginRight = '-400px'
+				: section[i].style.marginRight = '-300px'
 				setTimeout(() => {
 					section[i].style.transform = 'rotate(' + i*20 + 'deg)';
 					this.refs.main.className = 'section';
 				},800)
 			},i*200);
 		}
-	}
-
-	hrefBack() {
-		this.refs.profile.className = 'profile animated bounceOutLeft';
-		setTimeout(() => {
-			window.location.href = '#/';
-		},500)
 	}
 
 	hideBlack() {
@@ -55,6 +59,40 @@ class Profile extends React.Component {
 		}
 		else if(this.state.section === 'hobby') {
 			this.clickHobby();
+		}
+	}
+ 
+ 	switch(event) {
+ 		let info = event.target.getAttribute('data-info');
+ 		this.setState({info:info},() => {
+	 		if(this.state.translate) {
+		 		this.setState({translate:false, en:this.state.en ? false : true},() => {
+			 		if(this.state.en) {
+			 			this.refs.button.style.boxShadow = 'none';
+			 			this.refs.switch.style.backgroundColor = '#999';
+			 			this.refs.button.style.right = '20px';
+			 			this.refs.button.style.backgroundColor = '#fff';
+			 		}
+			 		else {
+			 			this.refs.button.style.boxShadow = '1px 1px 20px rgb(45,183,245)';
+			 			this.refs.switch.style.backgroundColor = 'rgba(45,183,245,.5)';
+			 			this.refs.button.style.right = 0;
+			 			this.refs.button.style.backgroundColor = 'rgb(45,183,245)';
+			 		}
+		 		});
+		 		setTimeout(() => {
+		 			this.setState({translate: true})
+		 		},500)
+	 		}
+ 		});
+ 	}
+
+	mainText() {
+		if(this.state.en) {
+			return {title: 'Basic'}
+		}
+		else {
+			return {title: '基本信息'}
 		}
 	}
 
@@ -74,14 +112,14 @@ class Profile extends React.Component {
 	hoverMain() {
 		if(!this.state.isPicked) {
 			if(this.state.hover != 'main') {
-				this.setState({hover:'main'})
+				this.setState({hover:'main'});
 				this.refs.main.className = 'section section-hover';
-				this.refs.main.style.right = window.innerWidth/5 + 'px'
+				this.refs.main.style.marginRight = '-400px';
 			}
 			else {
 				this.setState({hover:null})
 				this.refs.main.className = 'section';
-				this.refs.main.style.right = window.innerWidth/4 + 'px';
+				this.refs.main.style.marginRight = '-300px';
 			}
 		}
 	}
@@ -167,15 +205,6 @@ class Profile extends React.Component {
 		return(
 				<div ref='profile' className='profile animated bounceInLeft'>
 					<div className='container'>
-						<div className='nav'>
-							<div ref='back' className='back' onClick={this.hrefBack.bind(this)}>
-								<span className='glyphicon glyphicon-arrow-left'></span>
-							</div>
-							<h4>Profile</h4>
-							<div ref='menu' className='menu'>
-								<span className='glyphicon glyphicon-option-vertical'></span>
-							</div>
-						</div>
 						<div className='body'>
 							<div ref='black' className='black' onClick={this.hideBlack.bind(this)}></div>
 							<div ref='main'
@@ -185,7 +214,13 @@ class Profile extends React.Component {
 									 onMouseLeave={this.hoverMain.bind(this)}>
 								<div className='header'>
 									<div className='dress1'></div>
-									Hi i am main
+									<div className='dress2'><span className='glyphicon glyphicon-sunglasses'></span></div>
+									{this.mainText().title}
+								</div>
+								<div className='content'>
+									<div ref={this.state.info == 'main' ? 'switch' : null} className='switch'>
+										<div ref={this.state.info == 'main' ? 'button' : null} className='button' data-info='main' onMouseOver={this.switch.bind(this)}></div>
+									</div>
 								</div>
 							</div>
 							<div ref='skill' 
@@ -195,7 +230,13 @@ class Profile extends React.Component {
 									 onMouseLeave={this.hoverSkill.bind(this)}>
 								<div className='header'>
 									<div className='dress1'></div>
+									<div className='dress2'><span className='glyphicon glyphicon-star'></span></div>
 									Hi i am skill
+								</div>
+								<div className='content'>
+									<div ref={this.state.info == 'skill' ? 'switch' : null} className='switch'>
+										<div ref={this.state.info == 'skill' ? 'button' : null} className='button' data-info='skill' onMouseOver={this.switch.bind(this)}></div>
+									</div>
 								</div>
 							</div>
 							<div ref='plan'
@@ -205,7 +246,13 @@ class Profile extends React.Component {
 									 onMouseLeave={this.hoverPlan.bind(this)}>
 								<div className='header'>
 									<div className='dress1'></div>
+									<div className='dress2'><span className='glyphicon glyphicon-cloud'></span></div>
 									Hi i am plan
+								</div>
+								<div className='content'>
+									<div ref={this.state.info == 'plan' ? 'switch' : null} className='switch'>
+										<div ref={this.state.info == 'plan' ? 'button' : null} className='button' data-info='plan' onMouseOver={this.switch.bind(this)}></div>
+									</div>
 								</div>
 							</div>
 							<div ref='hobby'
@@ -215,10 +262,17 @@ class Profile extends React.Component {
 									 onMouseLeave={this.hoverHobby.bind(this)}>
 								<div className='header'>
 									<div className='dress1'></div>
+									<div className='dress2'><span className='glyphicon glyphicon-heart'></span></div>
 									Hi i am hobby
+								</div>
+								<div className='content'>
+									<div ref={this.state.info == 'hobby' ? 'switch' : null} className='switch'>
+										<div ref={this.state.info == 'hobby' ? 'button' : null} className='button' data-info='hobby' onMouseOver={this.switch.bind(this)}></div>
+									</div>
 								</div>
 							</div>
 						</div>
+						<Nav title='Profile' hrefAnimation={this.state.hrefAnimation}/>
 					</div>
 				</div>
 			);

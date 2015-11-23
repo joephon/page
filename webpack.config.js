@@ -3,6 +3,7 @@ module.exports = {
 		__dirname + '/src/jsx/app.jsx',
     __dirname + '/src/css/animate.min.css',
 		__dirname + '/src/css/default.sass',
+    __dirname + '/src/css/nav.sass',
     __dirname + '/src/css/app.sass',
     __dirname + '/src/css/home.sass',
     __dirname + '/src/css/profile.sass',

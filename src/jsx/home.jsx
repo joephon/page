@@ -4,10 +4,10 @@ import React from 'react';
 
 // define home page text
 const text = [
-	'People leave, people go, people never ever need to know. Welcome to my tiny site, it\'s powered by React and NodeJs. looks a kinda weird right? I dont act it as a simple site, it contains every single thought that I feel like to toss. press the right side buttom to know more if interested : )',
-	'人来人往，人去楼空；梦来梦去，水过竹笼。荣幸歇脚小站，搭建小站我用了React和NodeJs，颜色偏好灰白。大概看起来有点奇葩，不像个站，但我喜欢，喜欢各种折腾，各种鼓捣，小站虽葩，却承载着我无穷无尽的奇思小想。戳左边按钮切换语言，戳右边按钮了解更多: )',
+	'People leave, people go, people never ever need to know. Welcome to my tiny site, it\'s powered by React and NodeJs. looks a kinda weird right? I dont act it as a simple site, it contains every single thought that I feel like to toss. The above listed are all my skills, press the right side buttom to know more if interested : )',
+	'人来人往，人去楼空；梦遂梦毁，梦不旋踵。荣幸歇脚小站，搭建小站我用了React和NodeJs，颜色偏好灰白。大概看起来有点奇葩，不过没关系，我喜欢就好。爱折腾，好鼓捣，此处俨然成了在下胡作非为的小天地，并承载着我无穷无尽的奇思怪想。上面吊着的一串串乃鄙人涉猎范围，戳左边按钮切换语言，戳右边按钮了解更多: )',
 	'Well here we are! the above displayed cards are the main navigators which may lead you to any corner of my tiny world! Typecally, something was hidden under the page, I have it buried since the site was bulit. it may not be any secrets but can be some funny things. Want to dig it up? pick up a card and take forward. : )',
-	'帅哥，别来无恙！人生苍茫而苦短，码海八嘎(bug)而无岸。有生之年自然得活个通透，帅得洒脱，然而隔墙有耳，此处长话短说。我掐指一算，天狼星闪闪发亮，也许直走左转有姑娘。怎么样？编码需安详，感情待培养，重在酝酿，正如我辈日日夜夜面向对象。其实人生就那样，放屁要响，饭碗得抢，代码够漂亮，想怎样就怎样，但都无须张扬否则然并卵！',
+	'帅哥，别来无恙！人生苍茫而苦短，码海八嘎(bug)且无岸。今有幸萍水相逢，如浴春风，莫笑我站蓬荜多(灰)，然则黑白方为永恒之主题。崇尚简约风格，故这里不会有闲杂div等，但～也许会有古灵精怪的东西出现或者匪夷所思的事情发生。。。。。。不管怎样，那都是无害的。上面是几个主要入口，闲着没事，走走逛逛呗 : )',
 ]
 
 // define some lets to get element objects
