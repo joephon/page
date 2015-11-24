@@ -137,7 +137,7 @@ class Profile extends React.Component {
 	planText() {
 		if(this.state.en) {
 			return {
-				title: 'Chit-Chat',
+				title: 'Bull Shit',
 				sentence: [
 					'I got a dream, one day I would create a thing that could change the world. And that thing is totally made via my hands, from the sortware parts to the hardware parts. That sounds impossible right? yup, it\'s quite difficult and complicated. But it said that~where there is a will, there is a way! It also said~ follow your mind and then pick up your dream. I am the guy who\'s on that way.',
 					'They say power is everything, money is life and girls are gifts. I say no, power is just one thing, life contains lots of money and girls are still complicated just like the univers which is hard to predict. People always be told not to do something, again and agian, days by days till one day he finally lost the ability of making miracal happen. So I never stop, if someone tell me something\'s bad or wrong, I would not success, etc etc, I will listen but prefer to find out the answer by myself! So I have used to faild~lol, But I never ever lose fath : )',
@@ -148,7 +148,7 @@ class Profile extends React.Component {
 		}
 		else {
 			return {
-				title: '浅谈',
+				title: '胡扯',
 				sentence: [
 					'我有一个梦想，做出能影响人们行为习惯的产品，如果可以的话，从硬件到软件都要出自我手。这听起来有点发白日梦对吧？子曰：胡搞瞎搞，好过啥都不搞。于是我就先瞎搞搞，万一成功了呢？未来这种事情很难说的。',
 					'常言道：有自知，事竞成。我是很有自知之明的，所以感觉应该会成～lol。然而这个世界并非那么想当然，所以大多数时候，我都在品尝失败的滋味。不管怎样，人生可以经历无数次失败，然则能有一次成功，可能就登顶了。我乐观地认为，一切的不如意，一路的种种挫折，都是在为最后那一刹的成功而默默铺垫着，我感激这种洗礼。故，大脚迈步，梦踏前方！',
@@ -161,10 +161,28 @@ class Profile extends React.Component {
 
 	hobbyText() {
 		if(this.state.en) {
-			return {title: 'Hobbies'}
+			return {
+				title: 'Current Focus',
+				sentence: [
+					'Currently, I am focusing on React, React Native and NodeJs. I think deep digging in that stuffs may help me to reach the very future. Also Node is awesome, React too!',
+					'Using React could save me plenty of times, the most, it works excellent and fast! freindly for programmers. Makes complex task simple and clear. With that benifits I could be stronger to handle more and more applications.',
+					'On the server side Node is powerful, it\'s ecosystem too! I think Node is changing soemthing even will change much more in the comming future. So in order to avoid left behind too far away from the world, I should and must know well it!',
+					'Finally, the big guy is React Native! I dont know how to describe my feeling when I met that guy! He saves my time and makes my life easier, powers me by allowing people use pure javaScript to develop native app! Just like Facebook said: learn once develop everywhere! I am greatful appreciated for their genius!',
+					'At last, open mind for new technologies, such as meteor, vuejs. I would keep my eyes on these.',
+				],
+			}
 		}
 		else {
-			return {title: '兴趣爱好'}
+			return {
+				title: '眼前专注',
+				sentence: [
+					'近期，专注于玩转React， React Native 和NodeJs。我觉得能熟悉并良好运用他们，可以更好地适应未来的趋势，毕竟～这些技术实在太棒了！',
+					'用React，首先是节省了时间，这不一定意味着代码量会减少，但从整体来看，可以省去很多处理复杂业务逻辑所耗费的时间。React很快，结构清晰，思路清爽，用着过瘾。14年出来的东西15年才得以接触，简直相见恨晚！',
+					'在服务器端方面，Node的高温是很难忽略的一种存在！随着诸多优秀前端整合工具的迭代出现，越来越多的前端开发者都会选择基于Node的npm模块管理工具来管理和打包各种的资源，这意味着，无论前端后端，越来越依赖Node了。关于未来，即便不能精通它，至少也要能熟悉运用它。',
+					'然而压轴的正是React Native，这家伙岂止是高富帅能够比拟的，简直貌比潘安，才盖诸葛！他最大的帅点就是大大减少开发者的学习成本，同样是javaScript，同样是JSX，写出不亚于原生的native app！往后真的可以四面开发，八方留情了，人人都能做楚留香！拭目以待～',
+					'末了，保持一颗改革开放的心，并始终坚定不移地贯彻可持续发展战略！对于vuejs，meteor这类东西，是可以谈谈一带一路，深入探索和保持关注的。',
+				],
+			}
 		}
 	}
 
@@ -486,6 +504,19 @@ class Profile extends React.Component {
 								<div className='content'>
 									<div ref={this.state.info == 'hobby' ? 'switch' : null} className='switch'>
 										<div ref={this.state.info == 'hobby' ? 'button' : null} className='button' data-info='hobby' onMouseOver={this.switch.bind(this)}></div>
+									</div>
+									<div className='details'>
+										<div className='row'>
+											<div className='col-sm-12'>
+												<div className='sentence'>
+													<p>{this.hobbyText().sentence[0]}</p>
+													<p>{this.hobbyText().sentence[1]}</p>
+													<p>{this.hobbyText().sentence[2]}</p>
+													<p>{this.hobbyText().sentence[3]}</p>
+													<p>{this.hobbyText().sentence[4]}</p>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
