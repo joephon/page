@@ -278,7 +278,7 @@ class Home extends React.Component {
 									 onClick={this.avatarClick.bind(this)}>
 								<div className='pointer'><span className='glyphicon glyphicon-hand-up'></span></div>
 								<div ref='pic' className='pic'>
-									<img src='../src/image/joe.png' />
+									<img src='image/joe.png' />
 								</div>
 							</div>
 							<div ref='text' className='text'>

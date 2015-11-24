@@ -94,7 +94,7 @@ class Nav extends React.Component {
 						<div ref='blackBoard' className='black-board' onClick={this.rightNav.bind(this)}></div>
 						<div ref='menuList' className='menu-list'>
 							<div className='avatar'>
-								<img src='../src/image/joe.png' />
+								<img src='image/joe.png' />
 							</div>
 							<h3>Joephon</h3>
 							<p>Freelancer</p>
