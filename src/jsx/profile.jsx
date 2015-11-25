@@ -33,7 +33,7 @@ class Profile extends React.Component {
 		this.refs.black.style.width = window.innerWidth + 'px';
 		this.refs.black.style.height = window.innerHeight + 'px';
 		// define animation for sections
-		for(let i = 0; i < section.length; i ++) {
+		for (let i = 0; i < section.length; i ++) {
 			setTimeout(() => {
 				section[i].style.top = '100px';
 				section[i].style.right = '50%';
@@ -51,16 +51,16 @@ class Profile extends React.Component {
 	}
 
 	hideBlack() {
-		if(this.state.section === 'main') {
+		if (this.state.section === 'main') {
 			this.clickMain();
 		}
-		else if(this.state.section === 'skill') {
+		else if (this.state.section === 'skill') {
 			this.clickSkill();
 		}
-		else if(this.state.section === 'plan') {
+		else if (this.state.section === 'plan') {
 			this.clickPlan();
 		}
-		else if(this.state.section === 'hobby') {
+		else if (this.state.section === 'hobby') {
 			this.clickHobby();
 		}
 	}
@@ -68,15 +68,15 @@ class Profile extends React.Component {
  	switch(event) {
  		let info = event.target.getAttribute('data-info');
  		this.setState({info:info},() => {
-	 		if(this.state.translate) {
+	 		if (this.state.translate) {
 		 		this.setState({translate:false,en:this.state.en ? false : true},() => {
-			 		if(this.state.en) {
+			 		if (this.state.en) {
 			 			this.refs.button.style.boxShadow = 'none';
 			 			this.refs.switch.style.backgroundColor = '#999';
 			 			this.refs.button.style.right = '20px';
 			 			this.refs.button.style.backgroundColor = '#fff';
 			 		}
-			 		else if(!this.state.en){
+			 		else {
 			 			this.refs.button.style.boxShadow = '1px 1px 20px rgb(45,183,245)';
 			 			this.refs.switch.style.backgroundColor = 'rgba(45,183,245,.5)';
 			 			this.refs.button.style.right = 0;
@@ -91,7 +91,7 @@ class Profile extends React.Component {
  	}
 
 	mainText() {
-		if(this.state.en) {
+		if (this.state.en) {
 			return {
 				title: 'Basic',
 				name: 'Name: Joephon Dan',
@@ -126,7 +126,7 @@ class Profile extends React.Component {
 	}
 
 	skillText() {
-		if(this.state.en) {
+		if (this.state.en) {
 			return {title: 'Skills'}
 		}
 		else {
@@ -135,7 +135,7 @@ class Profile extends React.Component {
 	}
 
 	planText() {
-		if(this.state.en) {
+		if (this.state.en) {
 			return {
 				title: 'Bull Shit',
 				sentence: [
@@ -160,7 +160,7 @@ class Profile extends React.Component {
 	}
 
 	hobbyText() {
-		if(this.state.en) {
+		if (this.state.en) {
 			return {
 				title: 'Current Focus',
 				sentence: [
@@ -188,7 +188,7 @@ class Profile extends React.Component {
 
 
 	clickMain() {
-		if(!this.state.isPicked) {
+		if (!this.state.isPicked) {
 			this.setState({isPicked:true,section:'main'});
 			this.refs.black.style.display = 'block';
 			this.refs.main.className = 'section section-picked section-shadow';
@@ -201,7 +201,7 @@ class Profile extends React.Component {
 	}
 
 	hoverMain() {
-		if(!this.state.isPicked) {
+		if (!this.state.isPicked) {
 			if(this.state.hover != 'main') {
 				this.setState({hover:'main'});
 				this.refs.main.className = 'section section-hover';
@@ -216,7 +216,7 @@ class Profile extends React.Component {
 	}
 
 	clickSkill() {
-		if(!this.state.isPicked) {
+		if (!this.state.isPicked) {
 			this.setState({isPicked:true,section:'skill'});
 			this.refs.black.style.display = 'block';
 			this.refs.skill.className = 'section section-picked section-shadow';
@@ -229,7 +229,7 @@ class Profile extends React.Component {
 	}
 
 	hoverSkill() {
-		if(!this.state.isPicked) {
+		if (!this.state.isPicked) {
 			if(this.state.hover != 'skill') {
 				this.setState({hover:'skill'})
 				this.refs.skill.className = 'section section-hover';
@@ -242,7 +242,7 @@ class Profile extends React.Component {
 	}
 
 	clickPlan() {
-		if(!this.state.isPicked) {
+		if (!this.state.isPicked) {
 			this.setState({isPicked:true,section:'plan'});
 			this.refs.black.style.display = 'block';
 			this.refs.plan.className = 'section section-picked section-shadow';
@@ -255,7 +255,7 @@ class Profile extends React.Component {
 	}
 
 	hoverPlan() {
-		if(!this.state.isPicked) {
+		if (!this.state.isPicked) {
 			if(this.state.hover != 'plan') {
 				this.setState({hover:'plan'})
 				this.refs.plan.className = 'section section-hover';
@@ -268,7 +268,7 @@ class Profile extends React.Component {
 	}
 
 	clickHobby() {
-		if(!this.state.isPicked) {
+		if (!this.state.isPicked) {
 			this.setState({isPicked:true,section:'hobby'});
 			this.refs.black.style.display = 'block';
 			this.refs.hobby.className = 'section section-picked section-shadow';
@@ -281,7 +281,7 @@ class Profile extends React.Component {
 	}
 
 	hoverHobby() {
-		if(!this.state.isPicked) {
+		if (!this.state.isPicked) {
 			if(this.state.hover != 'hobby') {
 				this.setState({hover:'hobby'})
 				this.refs.hobby.className = 'section section-hover';
