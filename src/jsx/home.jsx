@@ -3,7 +3,7 @@
 import React from 'react';
 
 // define home page text
-const text = [
+let text = [
 	'People leave, people go, people never ever need to know. Welcome to my tiny site, it\'s powered by React and NodeJs. looks a kinda weird right? I dont act it as a simple site, it contains every single thought that I feel like to toss. The above listed are all my skills, press the right side buttom to know more if interested : )',
 	'人来人往，人去楼空；梦遂梦毁，梦不旋踵。荣幸歇脚小站，搭建小站我用了React和NodeJs，颜色偏好灰白。大概看起来有点奇葩，不过没关系，我喜欢就好。爱折腾，好鼓捣，此处俨然成了在下胡作非为的小天地，并承载着我无穷无尽的奇思怪想。上面吊着的一串串乃鄙人涉猎范围，戳左边按钮切换语言，戳右边按钮了解更多: )',
 	'Well here we are! the above displayed cards are the main navigators which may lead you to any corner of my tiny world! Typecally, something was hidden under the page, I have it buried since the site was bulit. it may not be any secrets but can be some funny things. Want to dig it up? pick up a card and take forward. : )',
@@ -45,7 +45,7 @@ class Home extends React.Component {
 	init col and tips
 */
 	cols() {
-		for(let i = 0; i < col.length; i ++) {
+		for (let i = 0; i < col.length; i ++) {
 			col[i].style.left = i * 150 + 50 + 'px';
 			col[i].style.top = Math.random() * -200 + 'px';
 			tip[i].style.transform = Math.random() >= 0.5 
@@ -58,22 +58,22 @@ class Home extends React.Component {
 	init skills
 */
 	skills() {
-		for(let i = 0; i < backend.length; i ++) {
+		for (let i = 0; i < backend.length; i ++) {
 			backend[i].style.top = i * 40 + 200 + 'px';
 		}
-		for(let i = 0; i < frontend.length; i ++) {
+		for (let i = 0; i < frontend.length; i ++) {
 			frontend[i].style.top = i * 40 + 200 + 'px';
 		}
-		for(let i = 0; i < db.length; i ++) {
+		for (let i = 0; i < db.length; i ++) {
 			db[i].style.top = i * 40 + 200 + 'px';
 		}
-		for(let i = 0; i < framework.length; i ++) {
+		for (let i = 0; i < framework.length; i ++) {
 			framework[i].style.top = i * 40 + 200 + 'px';
 		}
-		for(let i = 0; i < lib.length; i ++) {
+		for (let i = 0; i < lib.length; i ++) {
 			lib[i].style.top = i * 40 + 200 + 'px';
 		}
-		for(let i = 0; i < tool.length; i ++) {
+		for (let i = 0; i < tool.length; i ++) {
 			tool[i].style.top = i * 40 + 200 + 'px';
 		}
 	}
@@ -95,12 +95,12 @@ class Home extends React.Component {
 	handle home page text language
 */
 	textLanguage() {
-		if(this.state.isNav) {
+		if (this.state.isNav) {
 			this.state.text === text[2] 
 			? this.setState({text: text[3]})
 			: this.setState({text: text[2]})
 		}
-		else if(!this.state.isNav) {
+		else if (!this.state.isNav) {
 			this.state.text === text[0] 
 			? this.setState({text: text[1]})
 			: this.setState({text: text[0]})
@@ -119,58 +119,105 @@ class Home extends React.Component {
 	}
 
 /*
+	handle cols action
+*/
+	colsAction(action) {
+		if (action) {
+			for (let i = 0; i < col.length; i ++) {
+				setTimeout(() => {
+					col[i].style.top = '-460px';
+				},2000)
+			}
+		}
+		else {
+			for (let i = 0; i < col.length; i ++) {
+				setTimeout(() => {
+					col[i].style.top = Math.random() * -200 + 'px';
+				},200)
+			}			
+		}
+	}
+
+/*
+	handle skills action
+*/
+	skillsAction(action) {
+		if (action) {
+			for (let i = 0; i < skill.length; i ++) {
+				skill[i].style.left = '15px';
+				skill[i].setAttribute('class','skill animated hinge');
+			}
+		}
+		else {
+			for (let i = 0; i < skill.length; i ++) {
+				skill[i].style.left = '-50px';
+				skill[i].setAttribute('class','skill animated bounceInUp');
+			}			
+		}
+	}
+
+
+/*
+	handle panel action
+*/
+	panelAction(action) {
+		if (action) {
+			this.refs.avatar.className = 'avatar-click';
+			this.refs.pic.style.opacity = '1';
+			this.refs.panel.className = 'panel animated swing';
+		}
+		else {
+			this.refs.avatar.className = 'avatar';
+			this.refs.pic.style.opacity = '0';
+			this.refs.panel.className = 'panel';
+		}
+	}
+
+/*
+	handle cards Action
+*/
+	cardsAction(action) {
+		if (action) {
+			this.setState({text:text[2],isNav:true});
+			this.refs.light.style.left = '1500px';
+			this.refs.round.style.transform = 'rotate(360deg)';
+			this.refs.profile.style.display = 'block';
+			this.refs.article.style.display = 'block';
+			this.refs.game.style.display = 'block';
+			this.refs.present.style.display = 'block';
+		}
+		else {
+			this.setState({text:text[0],isNav:false});
+			this.refs.light.style.left = '-1500px'
+			this.refs.round.style.transform = 'rotate(0deg)';
+			this.refs.profile.style.display = 'none';
+			this.refs.article.style.display = 'none';
+			this.refs.game.style.display = 'none';
+			this.refs.present.style.display = 'none';
+		}
+	}
+
+/*
 	handle avatar actions
 */
 	avatarClick() {
-		if(this.state.press) {
+		if (this.state.press) {
 			this.setState({press: false})
-			if(this.refs.avatar.className === 'avatar'){
-				for(let i = 0; i < col.length; i ++) {
-					setTimeout(() => {
-						col[i].style.top = '-460px';
-					},2000)
-				}
-				for(let i = 0; i < skill.length; i ++) {
-					skill[i].style.left = '15px';
-					skill[i].setAttribute('class','skill animated hinge');
-				}
-				this.refs.avatar.className = 'avatar-click';
-				this.refs.pic.style.opacity = '1';
-				this.refs.panel.className = 'panel animated swing';
+			if (this.refs.avatar.className === 'avatar'){
+				this.colsAction(true);
+				this.skillsAction(true);
+				this.panelAction(true);
 				setTimeout(() => {
-					this.setState({text:text[2],isNav:true});
-					this.refs.light.style.left = '1500px';
-					this.refs.round.style.transform = 'rotate(360deg)';
-					this.refs.profile.style.display = 'block';
-					this.refs.article.style.display = 'block';
-					this.refs.game.style.display = 'block';
-					this.refs.present.style.display = 'block';
+					this.cardsAction(true);
 				},2000);
 			}
 			else {
-				for(let i = 0; i < col.length; i ++) {
-					setTimeout(() => {
-						col[i].style.top = Math.random() * -200 + 'px';
-					},200)
-				}
-				for(let i = 0; i < skill.length; i ++) {
-					skill[i].style.left = '-50px';
-					skill[i].setAttribute('class','skill animated bounceInUp');
-				}
-				this.refs.light.style.left = '-1500px'
-				this.refs.avatar.className = 'avatar';
-				this.refs.pic.style.opacity = '0';
-				this.refs.profile.style.display = 'none';
-				this.refs.article.style.display = 'none';
-				this.refs.game.style.display = 'none';
-				this.refs.present.style.display = 'none';
-				this.refs.panel.className = 'panel';
-				this.setState({text:text[0],isNav:false});
-				setTimeout(() => {
-					this.refs.round.style.transform = 'rotate(0deg)';
-				},2000)
+				this.colsAction(false);
+				this.skillsAction(false);
+				this.panelAction(false);
+				this.cardsAction(false);
 			}
-			setTimeout(() => this.setState({press: true}),2500)
+			setTimeout(() => this.setState({press: true}),2500);
 		}
 	}
 
