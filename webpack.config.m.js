@@ -1,15 +1,16 @@
 module.exports = {
-	entry: {
-     p: [
-  		__dirname + '/src/jsx/app.jsx',
-  	 ],
-     m: [
-      __dirname + '/src/jsx/m.app.jsx',
-     ]
-  },
+	entry: [
+		__dirname + '/src/jsx/m.app.jsx',
+    __dirname + '/src/css/animate.min.css',
+		__dirname + '/src/css/default.sass',
+    __dirname + '/src/css/m.nav.sass',
+    __dirname + '/src/css/m.app.sass',
+    __dirname + '/src/css/m.home.sass',
+    __dirname + '/src/css/m.profile.sass',
+	],
 	output: {
 		path: __dirname + '/lib/',
-		filename: '[name].app.js',
+		filename: 'm.app.js',
 	},
   module: {
       loaders: [

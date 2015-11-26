@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Nav from './nav.jsx';
+require('../css/profile.sass');
 
 // define section objects
 let section = document.getElementsByClassName('section');

@@ -5,6 +5,10 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute } from 'react-router';
 import Home from './home.jsx';
 import Profile from './profile.jsx';
+require('../css/default.sass');
+require('../css/animate.min.css');
+require('../css/app.sass');
+
 
 class App extends React.Component {
 	constructor(props) {

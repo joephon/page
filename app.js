@@ -8,6 +8,10 @@ app.use(express.static(path.join(__dirname,'node_modules')));
 app.use(express.static(path.join(__dirname,'src')));
 app.get('/',(req, res) => {
 	res.sendFile(__dirname + '/view/index.html');
-}).listen(4000);
+});
+app.get('/m',(req, res) => {
+	res.sendFile(__dirname + '/view/m.index.html');
+})
+app.listen(4000);
 
 console.log('running on port:4000');

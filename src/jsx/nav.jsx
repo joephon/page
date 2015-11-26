@@ -1,6 +1,7 @@
 'use strict'
 
 import React from 'react';
+require('../css/nav.sass');
 
 class Nav extends React.Component {
 	constructor(props) {

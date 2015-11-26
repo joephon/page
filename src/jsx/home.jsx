@@ -1,6 +1,7 @@
 'use strict'
 
 import React from 'react';
+require('../css/home.sass');
 
 // define home page text
 let text = [
