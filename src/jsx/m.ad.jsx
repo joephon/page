@@ -24,7 +24,7 @@ class Ad extends React.Component {
 			this.bounceInUp();
 			this.textMove();
 			this.icon();
-		},50)
+		},600)
 	}
 
 	joephon() {
