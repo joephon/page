@@ -1,11 +1,13 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var serveStatic = require('serve-static');
 
 app.set('views', __dirname + '/view');
-app.use(express.static(path.join(__dirname,'/lib/')));
-app.use(express.static(path.join(__dirname,'/node_modules/')));
-app.use(express.static(path.join(__dirname,'/src/')));
+app.use(express.static(path.join(__dirname,'lib')));
+app.use(express.static(path.join(__dirname,'node_modules')));
+app.use(express.static(path.join(__dirname,'src')));
+app.use(serveStatic('node_modules'));
 app.get('/',(req, res) => {
 	res.sendFile(__dirname + '/view/index.html');
 });
