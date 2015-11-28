@@ -1,6 +1,7 @@
 'use strict'
 
 import React from 'react';
+import Nav from './m.nav.jsx';
 require('../css/m.home.sass');
 
 class Home extends React.Component {
@@ -11,10 +12,15 @@ class Home extends React.Component {
 		};
 	}
 
+	componentDidMount() {
+
+	}
+
 	render() {
 		return(
-				<div className='m-home'>
+				<div className='m-home animated fadeIn'>
 					<div className='container'>
+						<Nav />
 						i am home!
 					</div>
 				</div>

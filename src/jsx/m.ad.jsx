@@ -24,7 +24,7 @@ class Ad extends React.Component {
 			this.bounceInUp();
 			this.textMove();
 			this.icon();
-		},600)
+		},600);
 	}
 
 	joephon() {
@@ -58,12 +58,12 @@ class Ad extends React.Component {
 				text[i].style.left = window.innerWidth > 320 
 				? 80 + i * 25 + 'px' 
 				: 60 + i * 25 + 'px';
-				text[i].style.color = 'rgba(171,53,19,.9)';
-				text[i].style.textShadow = '1px 1px 60px red';
+				text[i].style.color = 'rgba(238,214,68,.9)';
+				text[i].style.textShadow = '1px 1px 60px rgb(238,214,68)';
 			}
 			this.refs.text2.style.top = '60%';
-			this.refs.text2.style.color = 'rgba(171,53,19,.9)';
-			this.refs.text2.style.textShadow = '1px 1px 60px red';
+			this.refs.text2.style.color = 'rgba(238,214,68,.9)';
+			this.refs.text2.style.textShadow = '1px 1px 60px rgb(238,214,68)';
 		},4100)
 	}
 
@@ -79,7 +79,7 @@ class Ad extends React.Component {
 		setTimeout(() => {
 			this.refs.icon.style.left = window.innerWidth - 20 + 'px';
 			this.refs.icon.style.top = '20%';
-			this.refs.icon.style.boxShadow = '1px 1px 50px red';
+			this.refs.icon.style.boxShadow = '1px 1px 50px rgb(238,214,68)';
 		},2800);
 	}
 
@@ -123,7 +123,10 @@ class Ad extends React.Component {
 		this.refs.icon.className = 'icon animated bounceOut';
 		setTimeout(() => {
 			this.refs.mAd.className = 'm-ad animated fadeOutRight';
-		},600);
+			setTimeout(() => {
+				location.href = '#/home';
+			},1000)
+		},500)
 	}
 
 	render() {
