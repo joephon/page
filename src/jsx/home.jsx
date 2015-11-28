@@ -3,6 +3,7 @@
 import React from 'react';
 require('../css/home.sass');
 
+
 // define home page text
 let text = [
 	'People leave, people go, people never ever need to know. Welcome to my tiny site, it\'s powered by React and NodeJs. looks a kinda weird right? I dont act it as a simple site, it contains every single thought that I feel like to toss. The above listed are all my skills, press the right side buttom to know more if interested : )',

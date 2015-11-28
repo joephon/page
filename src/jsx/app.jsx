@@ -10,6 +10,7 @@ require('../css/animate.min.css');
 require('../css/app.sass');
 
 
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
