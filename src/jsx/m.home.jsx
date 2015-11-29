@@ -20,7 +20,7 @@ class Home extends React.Component {
 		return(
 				<div className='m-home animated fadeIn'>
 					<div className='container'>
-						<Nav />
+						<Nav title='Home' href='/'/>
 						i am home!
 					</div>
 				</div>
