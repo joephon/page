@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute } from 'react-router';
 import Ad from './m.ad.jsx';
 import Home from './m.home.jsx';
+import Profile from './m.profile.jsx';
 require('../css/animate.min.css');
 require('../css/default.sass');
 require('../css/m.app.sass');
@@ -17,10 +18,11 @@ class App extends React.Component {
 		};
 	}
 
+
 	render() {
 		return (
 				<div className='container'>
-					{this.props.children}
+					{this.props.children && React.cloneElement(this.props.children, {back:'#/'})}
 				</div>
 			);
 	}
@@ -31,6 +33,7 @@ ReactDOM.render((
 			<Route path='/' component={App}>
 				<IndexRoute component={Ad} />
 				<Route path='home' component={Home} />
+				<Route path='profile' component={Profile} />
 			</Route>
 		</Router>
 	),

@@ -19,8 +19,8 @@ class Home extends React.Component {
 	render() {
 		return(
 				<div className='m-home animated fadeIn'>
+					<Nav title='Home' href={this.props.back}/>
 					<div className='container'>
-						<Nav title='Home' href='/'/>
 						i am home!
 					</div>
 				</div>

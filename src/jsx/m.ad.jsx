@@ -28,12 +28,22 @@ class Ad extends React.Component {
 	}
 
 	joephon() {
+		let b;
 		for (let i = 0; i < text.length; i ++ ) {
 			setTimeout(() => {
 				text[i].style.top = '65%';
-				text[i].style.left = window.innerWidth > 320 
-				? 80 + i * 25 + 'px' 
-				: 60 + i * 25 + 'px';
+				if (window.innerWidth <= 320) {
+					text[i].style.left = 60 + i * 25 + 'px';
+				}
+				else if (window.innerWidth <= 375) {
+					text[i].style.left = 80 + i * 25 + 'px';
+				}
+				else if (window.innerWidth <= 414) {
+					text[i].style.left = 100 + i * 25 + 'px';
+				}
+				else if (window.innerWidth <= 768) {
+					text[i].style.left = 250 + i * 25 + 'px';
+				}
 			},i * 200)
 		}
 	}
