@@ -6,6 +6,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import Ad from './m.ad.jsx';
 import Home from './m.home.jsx';
 import Profile from './m.profile.jsx';
+import NoMatch from './m.noMatch.jsx';
 require('../css/animate.min.css');
 require('../css/default.sass');
 require('../css/m.app.sass');
@@ -34,6 +35,7 @@ ReactDOM.render((
 				<IndexRoute component={Ad} />
 				<Route path='home' component={Home} />
 				<Route path='profile' component={Profile} />
+				<Route path='*' component={NoMatch} />
 			</Route>
 		</Router>
 	),

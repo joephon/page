@@ -463,7 +463,7 @@ class Profile extends React.Component {
 											</div>
 										</div>
 										<div className='dress1'>
-											<span className='glyphicon glyphicon-cloud'></span>
+											<span className='glyphicon glyphicon-heart'></span>
 										</div>
 									</div>
 									<div ref='hobbyContent'
