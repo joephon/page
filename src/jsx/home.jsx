@@ -94,6 +94,20 @@ class Home extends React.Component {
 	}
 
 /*
+	handle Apps actions
+*/
+	hrefPresent() {
+		this.refs.present.className = 'nav animated shake';
+		setTimeout(() => {
+			this.refs.home.className= 'home animated bounceOutRight';
+			setTimeout(() => {
+				window.location.href = '#/apps';
+			},500)
+		},1000)
+	}
+
+
+/*
 	handle home page text language
 */
 	textLanguage() {
@@ -242,7 +256,9 @@ class Home extends React.Component {
 								<div className='dress2'><span className='glyphicon glyphicon-pencil'></span></div>
 								<div className='dress3'>Contains some chit notes, click to see around.</div>
 							</div>
-							<div ref ='present' className='nav animated flipInY'>
+							<div ref ='present'
+									 className='nav animated flipInY'
+									 onClick={this.hrefPresent.bind(this)}>
 								<div className='dress0'><span className='glyphicon glyphicon-hand-right'></span></div>
 								<div className='dress1'></div>
 								<div className='dress2'><span className='glyphicon glyphicon-film'></span></div>

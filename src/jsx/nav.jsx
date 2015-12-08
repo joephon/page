@@ -20,7 +20,7 @@ class Nav extends React.Component {
 	hrefBack() {
 		this.props.hrefAnimation();
 	  setTimeout(() => {
-			window.location.href = '#/';
+			window.history.back();
 	  },500)
 	}
 

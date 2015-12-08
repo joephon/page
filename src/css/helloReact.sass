@@ -1,0 +1,83 @@
+.hello-react
+	width: 100%
+	height: 100%
+	background-color: #000
+	.container
+		position: relative
+		overflow: hidden
+		width: 100%
+		height: 100%
+		.buttons
+			position: absolute
+			bottom: 10px
+			left: 0
+			width: 100%
+			height: 120px
+			line-height: 120px
+			text-align: center
+			font-size: 30px
+			color: #000
+			.backward
+				position: absolute
+				top: 0
+				left: 50%
+				width: 60px
+				height: 120px
+				margin-left: -60px
+				border-radius: 60px 0 0 60px
+				cursor: pointer
+				background-color: rgba(255,255,255,.5)
+				transition: all 0.3s ease-in-out
+				&:hover
+					background-color: rgba(255,255,255,.9)
+			.forward
+				position: absolute
+				top: 0
+				left: 50%
+				width: 60px
+				height: 120px
+				border-radius: 0 60px 60px 0
+				cursor: pointer
+				background-color: rgba(10,118,183,.5)
+				transition: all 0.3s ease-in-out
+				&:hover
+					background-color: rgba(10,118,183,.9)
+		.process
+			overflow: hidden
+			position: relative
+			width: 80%
+			height: 40px
+			margin: 10px auto 0 auto
+			border-radius: 15px
+			background-color: rgba(255,255,255,.5)
+			.step
+				position: absolute
+				top: 0
+				left: 50%
+				line-height: 40px
+				text-align: center
+				color: #fff
+			.inner-process
+				position: absolute
+				top: 0
+				left: 0
+				width: 0
+				height: 40px
+				background-color: rgba(10,118,183,1)
+				transition: all 0.5s ease-in-out
+		.back
+			position: absolute
+			top: 0
+			right: 0
+			width: 50px
+			height: 50px
+			line-height: 50px
+			text-align: center
+			font-size: 30px
+			border-radius: 50%
+			cursor: pointer
+			color: #fff
+			background-color: rgba(255,255,255,.5)
+			&:hover
+				color: #000
+				background-color: #fff

@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute } from 'react-router';
 import Home from './home.jsx';
 import Profile from './profile.jsx';
+import Apps from './apps.jsx';
+import HelloReact from './helloReact.jsx';
 require('../css/default.sass');
 require('../css/animate.min.css');
 require('../css/app.sass');
@@ -35,6 +37,8 @@ ReactDOM.render((
 				<Route path='/' component={App}>
 					<IndexRoute component={Home} />
 					<Route path='profile' component={Profile} />
+					<Route path='apps' component={Apps} />
+					<Route path='app/helloReact' component={HelloReact} />
 				</Route>
 			</Router>
 		),document.getElementById('app')
