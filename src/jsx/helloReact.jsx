@@ -32,15 +32,21 @@ class HelloReact extends React.Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener('keydown',(event) => {
-			event.preventDefault();
-			if (event.keyCode === 37) {
-				this.backward();
-			}
-			else if (event.keyCode === 39) {
-				this.forward();
-			}
-		},false)
+		window.addEventListener('keydown',this.onKeyDown.bind(this));
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('keydown',this.onKeyDown.bind(this));
+	}
+
+	onKeyDown(event) {
+		event.preventDefault();
+		if (event.keyCode === 37) {
+			this.backward();
+		}
+		else if (event.keyCode === 39) {
+			this.forward();
+		}
 	}
 
 	language() {
@@ -68,24 +74,6 @@ class HelloReact extends React.Component {
 		: this.state.step});
 	}
 
-	casting() {
-		switch(this.state.step) {
-			case 0:
-			this.step1();
-			break;
-			case 1:
-			this.step2();
-			break;
-		}
-	}
-
-	step1() {
-		return 0;
-	}
-
-	step2() {
-		return 1;
-	}
 
 	render() {
 		return(
@@ -108,7 +96,6 @@ class HelloReact extends React.Component {
 									 : item.cn}
 									</div>
 								)
-							step ++;
 						})}
 						<div className='buttons'>
 							<div className='backward' onClick={this.backward.bind(this)}>
