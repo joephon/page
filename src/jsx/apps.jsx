@@ -63,7 +63,7 @@ class Apps extends React.Component {
 
 	render() {
 		return(
-				<div ref='apps' className='apps animated fadeIn' style={{backgroundImage:'url(../image/aim.jpg)'}}>
+				<div ref='apps' className='apps animated fadeIn' style={{backgroundImage:'url(http://dl.bizhi.sogou.com/images/2012/04/28/301395.jpg?f=download)'}}>
 					<div className='container'>
 						<div ref='wrap' className='wrap'>
 	          </div>
