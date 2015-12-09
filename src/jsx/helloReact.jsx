@@ -63,7 +63,7 @@ class HelloReact extends React.Component {
 	hrefBack() {
 		this.refs.helloReact.className = 'hello-react animated lightSpeedOut';
 		setTimeout(() => {
-			history.back();
+			location.href = '#/apps';
 		},800)
 	}
 
