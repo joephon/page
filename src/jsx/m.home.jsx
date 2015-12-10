@@ -48,7 +48,7 @@ class Home extends React.Component {
 	render() {
 		return(
 				<div className='m-home animated fadeIn'>
-					<Nav title='Home' href={this.props.back}/>
+					<Nav title='Home' />
 					<div className='container'>
 						<div className='list animated bounceInUp'>
 							<div ref='profile' className='item' onClick={this.hrefProfile.bind(this)}>

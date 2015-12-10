@@ -246,7 +246,7 @@ class Profile extends React.Component {
 	render() {
 		return(
 				<div className='m-profile animated fadeIn'>
-					<Nav title='Profile' href={this.props.back}/>
+					<Nav title='Profile' />
 					<div className='container'>
 						<div className='wrap'>
 							<div className='list'>

@@ -16,7 +16,7 @@ class Nav extends React.Component {
 	}
 
 	hrefBack() {
-		location.href = this.props.href;
+		history.back();
 	}
 
 	hrefHome() {

@@ -58,7 +58,7 @@ class NoMatch extends React.Component {
 	render() {
 		return(
 				<div style={styles.noMatch}>
-					<Nav title='Developing' href={this.props.back}/>
+					<Nav title='Developing' />
 					<div style={styles.noMatch.container}>
 						<img style={styles.noMatch.img} src='../image/coming.jpg'/>
 					</div>
