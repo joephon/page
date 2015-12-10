@@ -95,7 +95,7 @@ class Profile extends React.Component {
 				sentence: [
 					'Currently, I am focusing on React, React Native and NodeJs. I think deep digging in that stuffs may help me to reach the very future. Also Node is awesome, React too!',
 					'Using React could save me plenty of times, the most, it works excellent and fast! freindly for programmers. Makes complex task simple and clear. With that benifits I could be stronger to handle more and more applications.',
-					'On the server side Node is powerful, it\'s ecosystem too! I think Node is changing soemthing even will change much more in the comming future. So in order to avoid left behind too far away from the world, I should and must know well it!',
+					'On the server side Node is powerful, it\'s ecosystem too! I think Node is changing something even will change much more in the coming future. So in order to avoid left behind too far away from the world, I should and must know well it!',
 					'Finally, the big guy is React Native! I dont know how to describe my feeling when I met that guy! He saves my time and makes my life easier, powers me by allowing people use pure javaScript to develop native app! Just like Facebook said: learn once develop everywhere! I am greatful appreciated for their genius!',
 					'At last, open mind for new technologies, such as meteor, vuejs. I would keep my eyes on these.',
 				],
