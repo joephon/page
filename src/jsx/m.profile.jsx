@@ -245,12 +245,12 @@ class Profile extends React.Component {
 
 	render() {
 		return(
-				<div className='m-profile animated fadeIn'>
+				<div className='m-profile'>
 					<Nav title='Profile' />
 					<div className='container'>
 						<div className='wrap'>
-							<div className='list'>
-								<div className='item animated bounceInUp'>
+							<div className='list  animated bounceInUp'>
+								<div className='item'>
 									<div ref='mainHeader' className='header'>
 										<div className='dress0'>
 										</div>
@@ -314,7 +314,7 @@ class Profile extends React.Component {
 										</div>
 									</div>
 								</div>
-								<div className='item animated bounceInUp'>
+								<div className='item'>
 									<div ref='skillHeader' className='header'>
 										<div className='dress0'>
 										</div>
@@ -419,7 +419,7 @@ class Profile extends React.Component {
 										</div>
 									</div>
 								</div>
-								<div className='item animated bounceInUp'>
+								<div className='item'>
 									<div ref='planHeader' className='header'>
 										<div className='dress0'>
 										</div>
@@ -450,7 +450,7 @@ class Profile extends React.Component {
 										</div>
 									</div>
 								</div>
-								<div className='item animated bounceInUp'>
+								<div className='item'>
 									<div ref='hobbyHeader' className='header'>
 										<div className='dress0'>
 										</div>

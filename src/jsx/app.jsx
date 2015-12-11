@@ -36,6 +36,7 @@ ReactDOM.render((
 			<Router>
 				<Route path='/' component={App}>
 					<IndexRoute component={Home} />
+					<Route path='home' component={Home} />
 					<Route path='profile' component={Profile} />
 					<Route path='apps' component={Apps} />
 					<Route path='app/helloReact' component={HelloReact} />

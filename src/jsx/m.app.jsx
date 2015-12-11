@@ -8,6 +8,7 @@ import Home from './m.home.jsx';
 import Profile from './m.profile.jsx';
 import NoMatch from './m.noMatch.jsx';
 import Apps from './m.apps.jsx';
+import Games from './m.games.jsx';
 require('../css/animate.min.css');
 require('../css/default.sass');
 require('../css/m.app.sass');
@@ -37,6 +38,7 @@ ReactDOM.render((
 				<Route path='home' component={Home} />
 				<Route path='profile' component={Profile} />
 				<Route path='apps' component={Apps} />
+				<Route path='games' component={Games} />
 				<Route path='*' component={NoMatch} />
 			</Route>
 		</Router>

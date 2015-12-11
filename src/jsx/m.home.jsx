@@ -47,10 +47,10 @@ class Home extends React.Component {
 
 	render() {
 		return(
-				<div className='m-home animated fadeIn'>
+				<div className='m-home'>
 					<Nav title='Home' />
 					<div className='container'>
-						<div className='list animated bounceInUp'>
+						<div className='list animated fadeInLeft'>
 							<div ref='profile' className='item' onClick={this.hrefProfile.bind(this)}>
 								<div className='dress'></div>
 								<div className='icon'>
@@ -61,9 +61,7 @@ class Home extends React.Component {
 										Joephon, a dreamwalker programmer. click to know more.
 									</div>
 								</div>
-							</div>
-						</div>
-						<div className='list animated bounceInUp'>
+							</div>				
 							<div ref='notes' className='item' onClick={this.hrefNotes.bind(this)}>
 								<div className='dress'></div>
 								<div className='icon'>
@@ -74,9 +72,7 @@ class Home extends React.Component {
 										Contains some chit notes, click to see around.
 									</div>
 								</div>
-							</div>
-						</div>
-						<div className='list animated bounceInUp'>
+							</div>				
 							<div ref='apps' className='item' onClick={this.hrefApps.bind(this)}>
 								<div className='dress'></div>
 								<div className='icon'>
@@ -88,8 +84,6 @@ class Home extends React.Component {
 									</div>
 								</div>
 							</div>
-						</div>
-						<div className='list animated bounceInUp'>
 							<div ref='games' className='item' onClick={this.hrefGames.bind(this)}>
 								<div className='dress'></div>
 								<div className='icon'>
