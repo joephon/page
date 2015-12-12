@@ -61,10 +61,10 @@ class Nav extends React.Component {
 	}
 
 	hrefGame() {
-		if(this.props.title !== 'Game') {
+		if(this.props.title !== 'Games') {
 			this.props.hrefAnimation();
 		  setTimeout(() => {
-				window.location.href = '#/game';
+				window.location.href = '#/games';
 		  },500)
 		}
 	}
@@ -131,7 +131,7 @@ class Nav extends React.Component {
 							</div>
 							<div ref='hrefGame'
 									 className='href' 
-									 style={{color:this.props.title === 'Game' ? 'rgb(45,183,245)' : '#777'}}
+									 style={{color:this.props.title === 'Games' ? 'rgb(45,183,245)' : '#777'}}
 									 onClick={this.hrefGame.bind(this)}>
 								<span className='glyphicon glyphicon-fire'></span>
 								<span>Game</span>

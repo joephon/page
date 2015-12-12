@@ -7,6 +7,7 @@ import Home from './home.jsx';
 import Profile from './profile.jsx';
 import Apps from './apps.jsx';
 import HelloReact from './helloReact.jsx';
+import Games from './games.jsx';
 require('../css/default.sass');
 require('../css/animate.min.css');
 require('../css/app.sass');
@@ -39,6 +40,7 @@ ReactDOM.render((
 					<Route path='home' component={Home} />
 					<Route path='profile' component={Profile} />
 					<Route path='apps' component={Apps} />
+					<Route path='games' component={Games} />
 					<Route path='app/helloReact' component={HelloReact} />
 				</Route>
 			</Router>

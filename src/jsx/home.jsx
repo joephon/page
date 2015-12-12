@@ -106,6 +106,18 @@ class Home extends React.Component {
 		},1000)
 	}
 
+/*
+	handle Games actions
+*/
+	hrefGame() {
+		this.refs.game.className = 'nav animated shake';
+		setTimeout(() => {
+			this.refs.home.className= 'home animated bounceOutRight';
+			setTimeout(() => {
+				window.location.href = '#/games';
+			},500)
+		},1000)
+	}
 
 /*
 	handle home page text language
@@ -264,7 +276,9 @@ class Home extends React.Component {
 								<div className='dress2'><span className='glyphicon glyphicon-film'></span></div>
 								<div className='dress3'>Some cool Apps copied or built. click to view all.</div>
 							</div>
-							<div ref ='game' className='nav animated flipInY'>
+							<div ref ='game'
+									 className='nav animated flipInY'
+									 onClick={this.hrefGame.bind(this)}>
 								<div className='dress0'><span className='glyphicon glyphicon-hand-right'></span></div>
 								<div className='dress1'></div>
 								<div className='dress2'><span className='glyphicon glyphicon-fire'></span></div>

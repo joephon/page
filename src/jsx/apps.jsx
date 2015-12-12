@@ -8,6 +8,8 @@ class Apps extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			completed: 15,
+			hover: null,
 			hrefAnimation: () => {
 				this.refs.apps.className = 'apps animated bounceOutLeft';
 			},
@@ -70,32 +72,55 @@ class Apps extends React.Component {
 						<div ref='react'
 								 className='item row1'
 								 onClick={this.helloReact.bind(this)}>
+							<h2>你好React</h2>
 	            <h1>Say Hello to React</h1>
-	            <p>Coming soon!</p>
+	            <div className='process'>
+	            	<div className='completed' style={{width:this.state.completed + 'px'}}></div>
+	            	<h6>{this.state.completed + '%'}</h6>
+	            </div>
 	          </div>
 	          <div ref='wiki' className='item row1'>
-	            <h1>Wikipedia Search Engine</h1>
-	            <p>Coming soon!</p>
+	          	<h2>还没弄！</h2>
+	            <h1>Undefined</h1>
+	            <div className='process'>
+	            	<div className='completed' style={{width:this.state.completed - 15 + 'px'}}></div>
+	            	<h6>{this.state.completed - 15 + '%'}</h6>
+	            </div>
 	          </div>
 	          <div ref='calculator' className='item row1'>
-	            <h1>Stainless Steel Calculator</h1>
-	            <p>Coming soon!</p>
+	          	<h2>还没弄！</h2>
+	            <h1>Undefined</h1>
+	            <div className='process'>
+	            	<div className='completed' style={{width:this.state.completed - 15 + 'px'}}></div>
+	            	<h6>{this.state.completed - 15 + '%'}</h6>
+	            </div>
 	          </div>
 	          <div ref='timer' className='item row2'>
-	            <h1>Pomodoro Timer Zipline</h1>
-	            <p>Coming soon!</p>
+	          	<h2>还没弄！</h2>
+	            <h1>Undefined</h1>
+	            <div className='process'>
+	            	<div className='completed' style={{width:this.state.completed - 15 + 'px'}}></div>
+	            	<h6>{this.state.completed - 15 + '%'}</h6>
+	            </div>
 	          </div>
 	          <div ref='weather' className='item row2'>
-	            <h1>Weather App</h1>
-	            <p>Coming soon!</p>
+	          	<h2>还没弄！</h2>
+	            <h1>Undefined</h1>
+	            <div className='process'>
+	            	<div className='completed' style={{width:this.state.completed - 15 + 'px'}}></div>
+	            	<h6>{this.state.completed - 15 + '%'}</h6>
+	            </div>
 	          </div>
 	          <div ref='pacman' className='item row2'>
-	            <h1>2048</h1>
-	            <p>Coming soon!</p>
+	          	<h2>还没弄！</h2>
+	            <h1>Undefined</h1>
+	            <div className='process'>
+	            	<div className='completed' style={{width:this.state.completed - 15 + 'px'}}></div>
+	            	<h6>{this.state.completed - 15 + '%'}</h6>
+	            </div>
 	          </div>
 						<Nav title='Apps' hrefAnimation={this.state.hrefAnimation}/>
-						</div>
-						{this.props.children}
+					</div>
 				</div>
 			);
 	}
