@@ -295,7 +295,7 @@ class Profile extends React.Component {
 	}
 	render() {
 		return(
-				<div ref='profile' className='profile animated bounceInLeft'>
+				<div ref='profile' className='profile animated bounceInLeft' style={{backgroundImage:'url(http://7xp4y4.com1.z0.glb.clouddn.com/picnote.jpg)'}}>
 					<div className='container'>
 						<div className='body'>
 							<div ref='black' className='black' onClick={this.hideBlack.bind(this)}></div>

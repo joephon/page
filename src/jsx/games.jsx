@@ -98,7 +98,7 @@ class Games extends React.Component {
 
 	render() {
 		return(
-				<div ref='games' className='games animated fadeIn' style={{backgroundImage:'url(http://pic1.5442.com/2013/0713/05/14.jpg)'}}>
+				<div ref='games' className='games animated fadeIn' style={{backgroundImage:'url(http://7xp4y4.com1.z0.glb.clouddn.com/picunivers.jpg)'}}>
 					<div className='container'>
 						<div ref='dress1' className='dress1'></div>
 						<div ref='dress2' className='dress2'></div>
