@@ -143,7 +143,7 @@ class Ad extends React.Component {
     return(
         <div ref='mAd' className='m-ad'>
           <div ref='container' className='container'>
-            <img src='../image/ad.png' />
+            <img src='http://7xp4y4.com1.z0.glb.clouddn.com/picad.png' />
             <div ref='wrap' className='wrap'>
               <div className='text j'>J</div>
               <div className='text o'>o</div>
