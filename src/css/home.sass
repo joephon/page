@@ -1,266 +1,266 @@
 .home
-	width: 100%
-	height: 100%
-	.container
-		position: relative
-		overflow: hidden
-		width: 100%
-		height: 100%
-		.panel
-			position: absolute
-			height: 160px
-			left: 50%
-			bottom: 0
-			padding: 20px 200px 20px 200px
-			border-radius: 8px
-			background-color: rgba(0,0,0,.5)
-			@media (max-width: 1440px)
-				width: 1220px
-				margin-left: -610px
-			@media (max-width: 1280px)
-				width: 1220px
-				margin-left: -610px
-			@media (max-width: 1024px)
-				width: 920px
-				margin-left: -460px
-			@media (max-width: 768px)
-				width: 710px
-				margin-left: -355px
-			.light 
-				position: absolute
-				left: -1500px
-				top: 0
-				width: 1000px
-				height: 160px
-				box-shadow: 1px 1px 200px rgba(57,163,14,1)
-				background-color: rgba(57,163,14,.3)
-				transition: all 0.3s ease-in-out
-			.text 
-				@media (max-width: 768px)
-					font-size: 13px
-				text-indent: 2em
-				font-size: 20px
-				color: #f5f5f5
-			.global-back
-				position: absolute
-				top: -35px
-				left: -55px
-				width: 230px
-				height: 230px
-				border-radius: 50%
-				background-color: #eee
-			.global 
-				position: absolute
-				bottom: 5px
-				left: 5px
-				width: 150px
-				height: 150px
-				line-height: 150px
-				font-size: 150px
-				border-radius: 50%
-				color: #777
-				cursor: pointer
-				transform: rotate(0deg)
-				transition: all 0.3s ease-in-out	
-				&:hover
-					color: rgb(45,183,245)			
-			.round-back
-				position: absolute
-				top: -35px
-				right: -55px
-				width: 230px
-				height: 230px
-				border-radius: 50%
-				background-color: #eee
-			.round
-				position: absolute
-				bottom: 10px
-				right: 10px
-				width: 140px
-				height: 140px
-				line-height: 140px
-				font-size: 140px
-				border-radius: 50%
-				color: #777
-				transform: rotate(0deg)
-				transition: all 1s ease-in-out
-				&:hover
-					color: #FFA5B4			
-			.avatar
-				overflow: hidden
-				position: absolute
-				bottom: 5px
-				right: 5px
-				width: 150px
-				height: 150px
-				margin-top: -125px
-				margin-left: -125px
-				border: 15px solid rgba(255,255,255,.5)
-				border-radius: 50%
-				background-color: #777
-				cursor: pointer
-				transform: scale(1)
-				transition: all 0.2s ease-in-out
-				&:hover
-					background-color: #FFA5B4	
-				.pointer
-					padding: 40px
-					font-size: 30px
-					text-align: center
-					color: #f5f5f5
-			.avatar-click
-				overflow: hidden
-				position: absolute
-				bottom: 5px
-				right: 5px
-				width: 150px
-				height: 150px
-				margin-top: -125px
-				margin-left: -125px
-				border-radius: 50%
-				cursor: pointer
-				transform: scale(0.5)
-				transition: all 0.2s ease-in-out
-			.avatar .pic, .avatar-click .pic
-				opacity: 0
-				position: absolute
-				bottom: 0
-				width: 150px
-				height: 150px
-				border-radius: 50%
-				transition: all 0.5s ease-in-out
-				img 
-					width: 100%
-					height: 100%
-					border-radius: 50%
-		.col-wrap
-			position: relative
-			@media (max-width: 1440px)
-				width: 900px
-				margin: 0 auto
-			@media (max-width: 1280px)
-				width: 900px
-				margin: 0 auto
-			@media (max-width: 1024px)
-				width: 900px
-				margin: 0 auto
-			@media (max-width: 768px)
-				width: 720px
-				margin: 0 auto
-			.col 
-				position: absolute
-				top: -10px
-				left: 0
-				width: 20px
-				height: 450px
-				border-radius: 10px
-				background-color: #333
-				transition: all 0.5s ease-in-out
-				.tip
-					position: absolute
-					left: -40px
-					bottom: 15px
-					width: 100px
-					height: 30px
-					border-radius: 15px
-					line-height: 30px
-					text-align: center
-					font-size: 10px
-					background-color: rgba(57,163,14,1)
-					.glyphicon
-						margin-right: 5px
-				.skill
-					position: absolute
-					top: 0
-					left: -50px
-					width: 130px
-					padding: 5px
-					border-radius: 5px
-					text-align: center
-					font-size: 14px
-					color: #f5f5f5
-					background-color: rgba(0,0,0,.5)
-				.backend, .frontend, .db, .framework, .lib, .tool
-					position: absolute
-					top: 0
-					left: -50px
-		.nav-wrap
-			@media (max-width: 1440px)
-				width: 1220px
-				margin: 0 auto
-			@media (max-width: 1280px)
-				width: 1220px
-				margin: 0 auto
-			@media (max-width: 1024px)
-				width: 920px
-				margin: 0 auto
-			@media (max-width: 768px)
-				width: 610px
-				margin: 0 auto
-			.nav
-				display: none
-				float: left
-				position: relative
-				width: 285px
-				height: 200px
-				margin-top: 20px
-				margin-right: 20px
-				border-radius: 5px
-				background-color: #777
-				cursor: pointer
-				// -webkit-transform-style: preserve-3d
-				&:hover
-					box-shadow: 3px 3px 8px #888
-				&:hover .dress0
-					opacity: 0
-					left: 100px
-				&:hover .dress2
-					transform: rotateY(180deg)
-					transform-origin: left
-				&:hover .dress3
-					opacity: 1
-				.dress0
-					position: absolute
-					top: 30px
-					left: 30px
-					padding: 40px 36px 40px 36px
-					font-size: 40px 
-					text-align: center
-					color: #f5f5f5
-					transition: all 0.5s ease-in-out					
-				.dress1
-					position: absolute
-					top: 10px
-					left: 10px
-					width: 15px
-					height: 15px
-					border-radius: 50%
-					background-color: #eee
-				.dress2
-					position: absolute
-					top: 30px
-					right: 30px
-					padding: 40px 36px 40px 36px
-					border-radius: 5px
-					font-size: 40px 
-					text-align: center
-					color: #f5f5f5
-					background-color: #999	
-					transition: all 0.5s ease-in-out	
-				.dress3
-					opacity: 0
-					position: absolute
-					top: 30px
-					right: 30px
-					width: 110px
-					height: 137px
-					padding: 10px
-					border-radius: 5px
-					font-size: 16px 
-					text-align: center
-					color: #444
-					background-color: #999
-					transition: all 0.5s ease-in-out			
+  width: 100%
+  height: 100%
+  .container
+    position: relative
+    overflow: hidden
+    width: 100%
+    height: 100%
+    .panel
+      position: absolute
+      height: 160px
+      left: 50%
+      bottom: 0
+      padding: 20px 200px 20px 200px
+      border-radius: 8px
+      background-color: rgba(0,0,0,.5)
+      @media (max-width: 1440px)
+        width: 1220px
+        margin-left: -610px
+      @media (max-width: 1280px)
+        width: 1220px
+        margin-left: -610px
+      @media (max-width: 1024px)
+        width: 920px
+        margin-left: -460px
+      @media (max-width: 768px)
+        width: 710px
+        margin-left: -355px
+      .light 
+        position: absolute
+        left: -1500px
+        top: 0
+        width: 1000px
+        height: 160px
+        box-shadow: 1px 1px 200px rgba(57,163,14,1)
+        background-color: rgba(57,163,14,.3)
+        transition: all 0.3s ease-in-out
+      .text 
+        @media (max-width: 768px)
+          font-size: 13px
+        text-indent: 2em
+        font-size: 20px
+        color: #f5f5f5
+      .global-back
+        position: absolute
+        top: -35px
+        left: -55px
+        width: 230px
+        height: 230px
+        border-radius: 50%
+        background-color: #eee
+      .global 
+        position: absolute
+        bottom: 5px
+        left: 5px
+        width: 150px
+        height: 150px
+        line-height: 150px
+        font-size: 150px
+        border-radius: 50%
+        color: #777
+        cursor: pointer
+        transform: rotate(0deg)
+        transition: all 0.3s ease-in-out  
+        &:hover
+          color: rgb(45,183,245)      
+      .round-back
+        position: absolute
+        top: -35px
+        right: -55px
+        width: 230px
+        height: 230px
+        border-radius: 50%
+        background-color: #eee
+      .round
+        position: absolute
+        bottom: 10px
+        right: 10px
+        width: 140px
+        height: 140px
+        line-height: 140px
+        font-size: 140px
+        border-radius: 50%
+        color: #777
+        transform: rotate(0deg)
+        transition: all 1s ease-in-out
+        &:hover
+          color: #FFA5B4      
+      .avatar
+        overflow: hidden
+        position: absolute
+        bottom: 5px
+        right: 5px
+        width: 150px
+        height: 150px
+        margin-top: -125px
+        margin-left: -125px
+        border: 15px solid rgba(255,255,255,.5)
+        border-radius: 50%
+        background-color: #777
+        cursor: pointer
+        transform: scale(1)
+        transition: all 0.2s ease-in-out
+        &:hover
+          background-color: #FFA5B4 
+        .pointer
+          padding: 40px
+          font-size: 30px
+          text-align: center
+          color: #f5f5f5
+      .avatar-click
+        overflow: hidden
+        position: absolute
+        bottom: 5px
+        right: 5px
+        width: 150px
+        height: 150px
+        margin-top: -125px
+        margin-left: -125px
+        border-radius: 50%
+        cursor: pointer
+        transform: scale(0.5)
+        transition: all 0.2s ease-in-out
+      .avatar .pic, .avatar-click .pic
+        opacity: 0
+        position: absolute
+        bottom: 0
+        width: 150px
+        height: 150px
+        border-radius: 50%
+        transition: all 0.5s ease-in-out
+        img 
+          width: 100%
+          height: 100%
+          border-radius: 50%
+    .col-wrap
+      position: relative
+      @media (max-width: 1440px)
+        width: 900px
+        margin: 0 auto
+      @media (max-width: 1280px)
+        width: 900px
+        margin: 0 auto
+      @media (max-width: 1024px)
+        width: 900px
+        margin: 0 auto
+      @media (max-width: 768px)
+        width: 720px
+        margin: 0 auto
+      .col 
+        position: absolute
+        top: -10px
+        left: 0
+        width: 20px
+        height: 450px
+        border-radius: 10px
+        background-color: #333
+        transition: all 0.5s ease-in-out
+        .tip
+          position: absolute
+          left: -40px
+          bottom: 15px
+          width: 100px
+          height: 30px
+          border-radius: 15px
+          line-height: 30px
+          text-align: center
+          font-size: 10px
+          background-color: rgba(57,163,14,1)
+          .glyphicon
+            margin-right: 5px
+        .skill
+          position: absolute
+          top: 0
+          left: -50px
+          width: 130px
+          padding: 5px
+          border-radius: 5px
+          text-align: center
+          font-size: 14px
+          color: #f5f5f5
+          background-color: rgba(0,0,0,.5)
+        .backend, .frontend, .db, .framework, .lib, .tool
+          position: absolute
+          top: 0
+          left: -50px
+    .nav-wrap
+      @media (max-width: 1440px)
+        width: 1220px
+        margin: 0 auto
+      @media (max-width: 1280px)
+        width: 1220px
+        margin: 0 auto
+      @media (max-width: 1024px)
+        width: 920px
+        margin: 0 auto
+      @media (max-width: 768px)
+        width: 610px
+        margin: 0 auto
+      .nav
+        display: none
+        float: left
+        position: relative
+        width: 285px
+        height: 200px
+        margin-top: 20px
+        margin-right: 20px
+        border-radius: 5px
+        background-color: #777
+        cursor: pointer
+        // -webkit-transform-style: preserve-3d
+        &:hover
+          box-shadow: 3px 3px 8px #888
+        &:hover .dress0
+          opacity: 0
+          left: 100px
+        &:hover .dress2
+          transform: rotateY(180deg)
+          transform-origin: left
+        &:hover .dress3
+          opacity: 1
+        .dress0
+          position: absolute
+          top: 30px
+          left: 30px
+          padding: 40px 36px 40px 36px
+          font-size: 40px 
+          text-align: center
+          color: #f5f5f5
+          transition: all 0.5s ease-in-out          
+        .dress1
+          position: absolute
+          top: 10px
+          left: 10px
+          width: 15px
+          height: 15px
+          border-radius: 50%
+          background-color: #eee
+        .dress2
+          position: absolute
+          top: 30px
+          right: 30px
+          padding: 40px 36px 40px 36px
+          border-radius: 5px
+          font-size: 40px 
+          text-align: center
+          color: #f5f5f5
+          background-color: #999  
+          transition: all 0.5s ease-in-out  
+        .dress3
+          opacity: 0
+          position: absolute
+          top: 30px
+          right: 30px
+          width: 110px
+          height: 137px
+          padding: 10px
+          border-radius: 5px
+          font-size: 16px 
+          text-align: center
+          color: #444
+          background-color: #999
+          transition: all 0.5s ease-in-out      
 
 
 

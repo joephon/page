@@ -14,34 +14,34 @@ require('../css/default.sass');
 require('../css/m.app.sass');
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			
-		};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    };
+  }
 
 
-	render() {
-		return (
-				<div className='container'>
-					{this.props.children && React.cloneElement(this.props.children, {back: '#/'})}
-				</div>
-			);
-	}
+  render() {
+    return (
+        <div className='container'>
+          {this.props.children && React.cloneElement(this.props.children, {back: '#/'})}
+        </div>
+      );
+  }
 };
 
 ReactDOM.render((
-		<Router>
-			<Route path='/' component={App}>
-				<IndexRoute component={Ad} />
-				<Route path='home' component={Home} />
-				<Route path='profile' component={Profile} />
-				<Route path='apps' component={Apps} />
-				<Route path='games' component={Games} />
-				<Route path='*' component={NoMatch} />
-			</Route>
-		</Router>
-	),
-	document.getElementById('m-app')
+    <Router>
+      <Route path='/' component={App}>
+        <IndexRoute component={Ad} />
+        <Route path='home' component={Home} />
+        <Route path='profile' component={Profile} />
+        <Route path='apps' component={Apps} />
+        <Route path='games' component={Games} />
+        <Route path='*' component={NoMatch} />
+      </Route>
+    </Router>
+  ),
+  document.getElementById('m-app')
 );

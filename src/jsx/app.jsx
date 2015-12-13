@@ -8,6 +8,7 @@ import Profile from './profile.jsx';
 import Apps from './apps.jsx';
 import HelloReact from './helloReact.jsx';
 import Games from './games.jsx';
+import Notes from './notes.jsx';
 require('../css/default.sass');
 require('../css/animate.min.css');
 require('../css/app.sass');
@@ -15,37 +16,38 @@ require('../css/app.sass');
 
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
+  constructor(props) {
+    super(props);
+    this.state = {
 
-		};
-	}
+    };
+  }
 
-	render() {
-		return(
-				<div className='app'>
-					<div className='container'>
-						{this.props.children}
-					</div>
-				</div>
-			);
-	}
+  render() {
+    return(
+        <div className='app'>
+          <div className='container'>
+            {this.props.children}
+          </div>
+        </div>
+      );
+  }
 };
 
 ReactDOM.render((
-			<Router>
-				<Route path='/' component={App}>
-					<IndexRoute component={Home} />
-					<Route path='home' component={Home} />
-					<Route path='profile' component={Profile} />
-					<Route path='apps' component={Apps} />
-					<Route path='games' component={Games} />
-					<Route path='app/helloReact' component={HelloReact} />
-				</Route>
-			</Router>
-		),document.getElementById('app')
-	);
+      <Router>
+        <Route path='/' component={App}>
+          <IndexRoute component={Home} />
+          <Route path='home' component={Home} />
+          <Route path='profile' component={Profile} />
+          <Route path='apps' component={Apps} />
+          <Route path='games' component={Games} />
+          <Route path='notes' component={Notes} />
+          <Route path='app/helloReact' component={HelloReact} />
+        </Route>
+      </Router>
+    ),document.getElementById('app')
+  );
 
 
 
