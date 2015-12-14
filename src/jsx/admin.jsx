@@ -1,6 +1,7 @@
 'use strict'
 
 import React from 'react';
+import Home from './a.home.jsx';
 require('../css/admin.sass');
 
 class Admin extends React.Component {
@@ -39,6 +40,27 @@ class Admin extends React.Component {
     return(
         <div className='admin'>
           <div className='container'>
+            <div className={this.state.selected === 'Home'
+                 ? 'section animated fadeInLeft'
+                 : 'section animated fadeOutRight'}>
+              <Home />
+            </div>
+            <div className={this.state.selected === 'Users'
+                 ? 'section animated fadeInLeft'
+                 : 'section animated fadeOutRight'}>Hi I am Users
+            </div>
+            <div className={this.state.selected === 'Articles'
+                 ? 'section animated fadeInLeft'
+                 : 'section animated fadeOutRight'}>Hi I am Articles
+            </div>
+            <div className={this.state.selected === 'Feedbacks'
+                 ? 'section animated fadeInLeft'
+                 : 'section animated fadeOutRight'}>Hi I am Feedbacks
+            </div>
+            <div className={this.state.selected === 'Trace'
+                 ? 'section animated fadeInLeft'
+                 : 'section animated fadeOutRight'}>Hi I am Trace
+            </div>
             <div className='navigator'>
               <div className='navigator-tip animated infinite pulse'
                    style={{left:this.state.position}}>
