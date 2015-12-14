@@ -15,7 +15,7 @@ class Apps extends React.Component {
   hrefHelloReact() {
     this.refs.helloReact.className = 'item animated bounceOut';
     setTimeout(() => {
-      location.href = '#/helloReact';
+      location.href = '/helloReact';
     },800)
   }
 

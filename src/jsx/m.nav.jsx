@@ -20,23 +20,23 @@ class Nav extends React.Component {
   }
 
   hrefHome() {
-    location.href = '#/home';
+    location.href = '/home';
   }
 
   hrefProfile() {
-    location.href = '#/profile';
+    location.href = '/profile';
   }
 
   hrefNotes() {
-    location.href = '#/notes';
+    location.href = '/notes';
   }
 
   hrefApps() {
-    location.href = '#/apps';
+    location.href = '/apps';
   }
 
   hrefGames() {
-    location.href = '#/games';
+    location.href = '/games';
   }
 
   showDrop() {

@@ -19,28 +19,28 @@ class Home extends React.Component {
   hrefProfile() {
     this.refs.profile.className = 'item animated bounceOut';
     setTimeout(() => {
-      location.href = '#/profile';
+      location.href = '/profile';
     },800)
   }
 
   hrefNotes() {
     this.refs.notes.className = 'item animated bounceOut';
     setTimeout(() => {
-      location.href = '#/notes';
+      location.href = '/notes';
     },800)
   }
 
   hrefApps() {
     this.refs.apps.className = 'item animated bounceOut';
     setTimeout(() => {
-      location.href = '#/apps';
+      location.href = '/apps';
     },800)
   }
 
   hrefGames() {
     this.refs.games.className = 'item animated bounceOut';
     setTimeout(() => {
-      location.href = '#/games';
+      location.href = '/games';
     },800)
   }
 

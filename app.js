@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname,'node_modules')));
 app.use(express.static(path.join(__dirname,'src')));
 app.use(serveStatic('node_modules'));
 
-app.get('/',(req, res) => {
+app.use('*',(req, res) => {
   var userAgent = req.headers['user-agent'];
   if (isMobileDevice(userAgent)) {
     res.sendFile(__dirname + '/view/m.index.html');

@@ -28,7 +28,7 @@ class Nav extends React.Component {
     if(this.props.title !== 'Home') {
       this.props.hrefAnimation();
       setTimeout(() => {
-        window.location.href = '#/';
+        window.location.href = '/';
       },500)
     }
   }
@@ -37,7 +37,7 @@ class Nav extends React.Component {
     if(this.props.title !== 'Profile') {
       this.props.hrefAnimation();
       setTimeout(() => {
-        window.location.href = '#/profile';
+        window.location.href = '/profile';
       },500)
     }
   }
@@ -46,7 +46,7 @@ class Nav extends React.Component {
     if(this.props.title !== 'Notes') {
       this.props.hrefAnimation();
       setTimeout(() => {
-        window.location.href = '#/notes';
+        window.location.href = '/notes';
       },500)
     }
   }
@@ -55,7 +55,7 @@ class Nav extends React.Component {
     if(this.props.title !== 'Apps') {
       this.props.hrefAnimation();
       setTimeout(() => {
-        window.location.href = '#/apps';
+        window.location.href = '/apps';
       },500)
     }
   }
@@ -64,7 +64,7 @@ class Nav extends React.Component {
     if(this.props.title !== 'Games') {
       this.props.hrefAnimation();
       setTimeout(() => {
-        window.location.href = '#/games';
+        window.location.href = '/games';
       },500)
     }
   }

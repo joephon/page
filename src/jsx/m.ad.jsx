@@ -134,7 +134,7 @@ class Ad extends React.Component {
     setTimeout(() => {
       this.refs.mAd.className = 'm-ad animated fadeOutRight';
       setTimeout(() => {
-        location.href = '#/home';
+        location.href = '/home';
       },1000)
     },500)
   }

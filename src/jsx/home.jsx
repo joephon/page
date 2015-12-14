@@ -88,7 +88,7 @@ class Home extends React.Component {
     setTimeout(() => {
       this.refs.home.className= 'home animated bounceOutRight';
       setTimeout(() => {
-        window.location.href = '#/profile';
+        window.location.href = '/profile';
       },500)
     },1000)
   }
@@ -101,7 +101,7 @@ class Home extends React.Component {
     setTimeout(() => {
       this.refs.home.className= 'home animated bounceOutRight';
       setTimeout(() => {
-        window.location.href = '#/apps';
+        window.location.href = '/apps';
       },500)
     },1000)
   }
@@ -114,7 +114,7 @@ class Home extends React.Component {
     setTimeout(() => {
       this.refs.home.className= 'home animated bounceOutRight';
       setTimeout(() => {
-        window.location.href = '#/games';
+        window.location.href = '/games';
       },500)
     },1000)
   }
@@ -127,7 +127,7 @@ class Home extends React.Component {
     setTimeout(() => {
       this.refs.home.className= 'home animated bounceOutRight';
       setTimeout(() => {
-        window.location.href = '#/notes';
+        window.location.href = '/notes';
       },500)
     },1000)
   }

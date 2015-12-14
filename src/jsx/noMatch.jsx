@@ -1,18 +1,23 @@
 'use strict'
 
 import React from 'react';
-import Nav from './m.nav.jsx';
+import Nav from './nav.jsx';
 
 let styles = {
   noMatch: {
     container: {
+      position: 'relative',
       width: '100%',
       height: 'auto',
     },
-    img: {
+    text: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
       width: '100%',
-      height: '100%',
-      marginTop: '40px',
+      marginLeft: '-50%',
+      fontSize: '18px',
+      textAlign: 'center',
     },
     num: {
       width: '50px',
@@ -58,9 +63,9 @@ class NoMatch extends React.Component {
   render() {
     return(
         <div style={styles.noMatch}>
-          <Nav title='Developing' />
+          <Nav title='404' />
           <div style={styles.noMatch.container}>
-            <img style={styles.noMatch.img} src='../image/coming.jpg'/>
+            <h1 style={styles.noMatch.text}>Sorry,the page is not found, location will be redirected to home page after 5 seconds</h1>
           </div>
           <div style={styles.noMatch.num}>
             {this.state.num}

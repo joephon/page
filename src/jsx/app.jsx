@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { Router, Route, IndexRoute } from 'react-router';
 import Home from './home.jsx';
 import Profile from './profile.jsx';
@@ -9,6 +10,7 @@ import Apps from './apps.jsx';
 import HelloReact from './helloReact.jsx';
 import Games from './games.jsx';
 import Notes from './notes.jsx';
+import noMatch from './noMatch.jsx';
 require('../css/default.sass');
 require('../css/animate.min.css');
 require('../css/app.sass');
@@ -35,7 +37,7 @@ class App extends React.Component {
 };
 
 ReactDOM.render((
-      <Router>
+      <Router history={createBrowserHistory()}>
         <Route path='/' component={App}>
           <IndexRoute component={Home} />
           <Route path='home' component={Home} />
@@ -44,6 +46,7 @@ ReactDOM.render((
           <Route path='games' component={Games} />
           <Route path='notes' component={Notes} />
           <Route path='app/helloReact' component={HelloReact} />
+          <Route path='*' component={noMatch} />
         </Route>
       </Router>
     ),document.getElementById('app')

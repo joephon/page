@@ -15,7 +15,7 @@ class Games extends React.Component {
   href2048() {
     this.refs['2048'].className = 'item animated bounceOut';
     setTimeout(() => {
-      location.href = '#/2048';
+      location.href = '/2048';
     },800)
   }
 
