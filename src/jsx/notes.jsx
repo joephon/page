@@ -18,8 +18,9 @@ class Notes extends React.Component {
 
 
   selected(event) {
+    let text = event.target.textContent;
     event.stopPropagation;
-    this.setState({selected: event.target.textContent},() => {
+    this.setState({selected: text},() => {
       switch (this.state.selected) {
         case 'Brain Storm':
         this.setState({position: '20%'});

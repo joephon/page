@@ -1,9 +1,9 @@
 'use strict'
 
 import React from 'react';
-require('../css/a.home.sass');
+require('../css/a.users.sass');
 
-class Home extends React.Component {
+class Users extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,10 +13,10 @@ class Home extends React.Component {
 
   render() {
     return(
-        <div className='a-home'>
+        <div className='a-users'>
           <div className='container'>
             <div style={{width:'100%',textAlign:'center',fontSize:'30px'}}>
-              Home page is Developing......
+              Users section is Developing......
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@ class Home extends React.Component {
   }
 };
 
-export default Home;
+export default Users;
 
 
 

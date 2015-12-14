@@ -2,6 +2,10 @@
 
 import React from 'react';
 import Home from './a.home.jsx';
+import Users from './a.users.jsx';
+import Feedbacks from './a.feedbacks.jsx';
+import Trace from './a.trace.jsx';
+import Articles from './a.articles.jsx';
 require('../css/admin.sass');
 
 class Admin extends React.Component {
@@ -14,8 +18,9 @@ class Admin extends React.Component {
   }
 
   selected(event) {
+    let text = event.target.textContent;
     event.stopPropagation;
-    this.setState({selected: event.target.textContent},() => {
+    this.setState({selected: text},() => {
       switch (this.state.selected) {
         case 'Home':
         this.setState({position: '10%'});
@@ -47,19 +52,23 @@ class Admin extends React.Component {
             </div>
             <div className={this.state.selected === 'Users'
                  ? 'section animated fadeInLeft'
-                 : 'section animated fadeOutRight'}>Hi I am Users
+                 : 'section animated fadeOutRight'}>
+              <Users />
             </div>
             <div className={this.state.selected === 'Articles'
                  ? 'section animated fadeInLeft'
-                 : 'section animated fadeOutRight'}>Hi I am Articles
+                 : 'section animated fadeOutRight'}>
+              <Articles />
             </div>
             <div className={this.state.selected === 'Feedbacks'
                  ? 'section animated fadeInLeft'
-                 : 'section animated fadeOutRight'}>Hi I am Feedbacks
+                 : 'section animated fadeOutRight'}>
+              <Feedbacks />
             </div>
             <div className={this.state.selected === 'Trace'
                  ? 'section animated fadeInLeft'
-                 : 'section animated fadeOutRight'}>Hi I am Trace
+                 : 'section animated fadeOutRight'}>
+              <Trace />
             </div>
             <div className='navigator'>
               <div className='navigator-tip animated infinite pulse'
