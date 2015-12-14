@@ -9,6 +9,7 @@ class Notes extends React.Component {
     super(props);
     this.state = {
       selected: 'Brain Storm',
+      position: '20%',
       hrefAnimation: () => {
         this.refs.notes.className = 'notes animated bounceOutLeft';
       },
@@ -18,7 +19,22 @@ class Notes extends React.Component {
 
   selected(event) {
     event.stopPropagation;
-    this.setState({selected: event.target.textContent});
+    this.setState({selected: event.target.textContent},() => {
+      switch (this.state.selected) {
+        case 'Brain Storm':
+        this.setState({position: '20%'});
+        break;
+        case 'Technologies':
+        this.setState({position: '40%'});
+        break;
+        case 'Daily':
+        this.setState({position: '60%'});
+        break;
+        case 'Fictions':
+        this.setState({position: '80%'});
+        break;
+      }
+    });
   }
 
   render() {
@@ -55,10 +71,14 @@ class Notes extends React.Component {
             </div>
             <div className='wrap'>
               <div className='tabs'>
+                <div className='tip animated infinite pulse'
+                     style={{left:this.state.position}}>
+                  <div className='tip-angle'></div>
+                </div>               
                 <div className='tab animated rotateInDownLeft'
                      style={{
                        color:this.state.selected === 'Brain Storm'
-                       ? '#fff'
+                       ? 'rgb(45,183,245)'
                        : '#000',
                        backgroundColor:this.state.selected === 'Brain Storm'
                        ? 'rgba(0,0,0,.5)'
@@ -68,7 +88,7 @@ class Notes extends React.Component {
                 <div className='tab animated rotateInDownLeft'
                      style={{
                        color:this.state.selected === 'Technologies'
-                       ? '#fff'
+                       ? 'rgb(45,183,245)'
                        : '#000',
                        backgroundColor:this.state.selected === 'Technologies'
                        ? 'rgba(0,0,0,.5)'
@@ -78,7 +98,7 @@ class Notes extends React.Component {
                 <div className='tab animated rotateInDownLeft'
                      style={{
                        color:this.state.selected === 'Daily'
-                       ? '#fff'
+                       ? 'rgb(45,183,245)'
                        : '#000',
                        backgroundColor:this.state.selected === 'Daily'
                        ? 'rgba(0,0,0,.5)'
@@ -88,7 +108,7 @@ class Notes extends React.Component {
                 <div className='tab animated rotateInDownLeft'
                      style={{
                        color:this.state.selected === 'Fictions'
-                       ? '#fff'
+                       ? 'rgb(45,183,245)'
                        : '#000',
                        backgroundColor:this.state.selected === 'Fictions'
                        ? 'rgba(0,0,0,.5)'

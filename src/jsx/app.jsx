@@ -11,6 +11,7 @@ import HelloReact from './helloReact.jsx';
 import Games from './games.jsx';
 import Notes from './notes.jsx';
 import noMatch from './noMatch.jsx';
+import Admin from './admin.jsx';
 require('../css/default.sass');
 require('../css/animate.min.css');
 require('../css/app.sass');
@@ -46,6 +47,7 @@ ReactDOM.render((
           <Route path='games' component={Games} />
           <Route path='notes' component={Notes} />
           <Route path='app/helloReact' component={HelloReact} />
+          <Route path='admin' component={Admin} />
           <Route path='*' component={noMatch} />
         </Route>
       </Router>
