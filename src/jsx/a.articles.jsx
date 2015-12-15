@@ -3,7 +3,7 @@
 import React from 'react';
 require('../css/a.articles.sass');
 
-let data = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+let data = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
 class Articles extends React.Component {
   constructor(props) {
