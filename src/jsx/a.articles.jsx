@@ -3,12 +3,14 @@
 import React from 'react';
 require('../css/a.articles.sass');
 
-let data = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+let form = new FormData(document.forms.namedItem('articleForm')); 
+let xhr = new XMLHttpRequest();
 
 class Articles extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: [],
       selected: 'All',
       category: 'Brain Storm',
       cnTitle: null,
@@ -17,6 +19,19 @@ class Articles extends React.Component {
       cnContent: null,
       enContent: null,
     };
+  }
+
+  componentDidMount() {
+    this.ajax();
+  }
+
+  ajax() {
+    setTimeout(() => {
+      xhr.open('GET','http://192.168.1.103:3000/article');
+      xhr.send();
+      if (xhr.status === 200)
+        this.setState({data: xhr.response.articles});
+    },10)
   }
 
   selected(event) {
@@ -56,21 +71,23 @@ class Articles extends React.Component {
   }
 
   submit() {
-    let data = {};
-    data.createdAt = new Date();
-    data.category = this.state.category;
-    data.cnTitle = this.state.cnTitle;
-    data.enTitle = this.state.enTitle;
-    data.cnContent = this.state.cnContent;
-    data.enContent = this.state.enContent;
-    localStorage.setItem(new Date(),JSON.stringify(data))
-    setTimeout(() => {this.setState({selected: 'All',
-                                     category: 'Brain Storm',
-                                     cnTitle: null,
-                                     enTitle: null,
-                                     cnContent: null,
-                                     enContent: null,})},10)
-
+    // let data = {
+    //   category: this.state.category,
+    //   cnTitle: this.state.cnTitle,
+    //   enTitle: this.state.enTitle,
+    //   cnContent: this.state.cnContent,
+    //   enContent: this.state.enContent,
+    // };
+    xhr.open('POST','http://192.168.1.103:3000/article');
+    // form.append('category',this.state.category);
+    // form.append('cnTitle',this.state.cnTitle);
+    // form.append('enTitle',this.state.enTitle);
+    // form.append('cnContent',this.state.cnContent);
+    // form.append('enContent',this.state.enContent);
+    if (xhr.status === 200) {
+      alert('submited');
+    }
+    xhr.send(form);
   }
 
   render() {
@@ -174,14 +191,14 @@ class Articles extends React.Component {
                 <div className='item edit'>Edit</div>
                 <div className='item delete'>Delete</div>
               </div>
-              {data.map((item) => {
+              {this.state.data.map((item) => {
                 return (
-                    <div key={item} className='body'>
+                    <div key={item.id} className='body'>
                       <div className='item select-all'>
                         <input type='checkbox' name='select-one' className='checkbox'/>
                       </div>
-                      <div className='item number'>{item}</div>
-                      <div className='item title'>Title</div>
+                      <div className='item number'>{item._id}</div>
+                      <div className='item title'>{item.enTitle}</div>
                       <div className='item views'>
                         <span className='glyphicon glyphicon-eye-open'></span>
                         <span>200</span>
@@ -210,9 +227,13 @@ class Articles extends React.Component {
                  }}
                 >
               <div className='article-form'>
-                <form>
+                <form ref='form'
+                      name='articleForm'
+                      encType='multipart/form-data'
+                      >
                   <div className='form-group'>
-                    <select className='form-control'
+                    <select name='category'
+                            className='form-control'
                             value={this.state.category}
                             onChange={this.category.bind(this)}>
                       <option value='Brain Storm'
@@ -226,21 +247,24 @@ class Articles extends React.Component {
                     </select>
                   </div>
                   <div className='form-group'>
-                    <input className='form-control'
+                    <input name='cnTitle' 
+                           className='form-control'
                            type='text' name='en-title'
                            placeholder='标题'
                            value={this.state.cnTitle}
                            onChange={this.cnTitle.bind(this)} />
                   </div>
                   <div className='form-group'>
-                    <input className='form-control'
+                    <input name='enTitle'
+                           className='form-control'
                            type='text' name='en-title'
                            placeholder='Title'
                            value={this.state.enTitle}
                            onChange={this.enTitle.bind(this)} />
                   </div>
                   <div className='form-group'>
-                    <textarea className='form-control'
+                    <textarea name='cnContent'
+                              className='form-control'
                               style={{height: 300}}
                               type='text' name='cn-content'
                               placeholder='正文'
@@ -248,7 +272,8 @@ class Articles extends React.Component {
                               onChange={this.cnContent.bind(this)} ></textarea>
                   </div>
                   <div className='form-group'>
-                    <textarea className='form-control'
+                    <textarea name='enContent'
+                              className='form-control'
                               style={{height: 300}}
                               type='text' name='en-content'
                               placeholder='Content'
@@ -256,7 +281,7 @@ class Articles extends React.Component {
                               onChange={this.enContent.bind(this)} ></textarea>
                   </div>
                   <div className='btn btn-lg btn-default btn-block'
-                          onClick={this.submit.bind(this)}>Submit</div>
+                       onClick={this.submit.bind(this)}>Submit</div>
                 </form>
               </div>
             </div>
